@@ -1,6 +1,15 @@
 EventSource polyfill - https://html.spec.whatwg.org/multipage/server-sent-events.html#server-sent-events
 ========================================================
 
+Forked release from EventSourcePolyfill
+
+Made Changes:
+
+- Remove console.error logging
+- Add catch firefox cancel request reader.cancel().catch(() => {});
+
+
+
 Installing:
 -----------
 

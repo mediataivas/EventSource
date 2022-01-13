@@ -568,7 +568,7 @@
     return {
       abort: function () {
         if (reader != null) {
-          reader.cancel(); // https://bugzilla.mozilla.org/show_bug.cgi?id=1583815
+          reader.cancel().catch(() => {});
         }
         controller.abort();
       }
@@ -793,7 +793,6 @@
           });
           es.dispatchEvent(event);
           fire(es, es.onerror, event);
-          console.error(message);
         }
       }
     };
@@ -910,7 +909,6 @@
         es.dispatchEvent(event);
         fire(es, es.onerror, event);
         if (error != undefined) {
-          console.error(error);
         }
       }
     };
