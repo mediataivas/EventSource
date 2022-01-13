@@ -568,7 +568,7 @@
     return {
       abort: function () {
         if (reader != null) {
-          reader.cancel().catch(() => {});
+          reader.cancel().catch(() => {}); // https://bugzilla.mozilla.org/show_bug.cgi?id=1583815
         }
         controller.abort();
       }
